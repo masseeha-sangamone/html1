@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .theme1{
+            background-color:orange; 
+        }
+        .theme2{
+            background-color: white;
+            display:flex;
+            justify-content: center;
+        }
+        .theme3{
+            background-color: green;
+        }
+        .dimen1{
+            width:400px; 
+            height:100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="theme1 dimen1"></div>
+    <div class="theme2 dimen1">
+        <img id="ashokachakra1" src="ashokachakra.png" alt="">
+    </div>
+    <div class="theme3 dimen1"></div>
+    <script>
+        const asc1=document.getElementById("ashokachakra1");
+        let vis1=true;
+        asc1.onclick=function handle1(){
+            if(vis1==true){
+                vis1=false;
+                asc1.style.opacity="0";
+            }else{
+                vis1=true;
+                asc1.style.opacity="1";
+            }
+        }
+    </script>
+</body>
+</html>
