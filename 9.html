@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping cart</title>
+</head>
+<body>
+    <table id="table1"></table>
+    <p>Total price: <span id="text1"></span></p>
+    <script>
+        const tab1=document.getElementById("table1");
+        const txt1=document.getElementById("text1");
+        const ils1={
+            "Apple":10,
+            "Watermelon":20,
+            "Lay's":5
+        };
+        let btn1=undefined;
+        let kys1=undefined;
+        let ttl1=0;
+
+        kys1=Object.keys(ils1);
+        for(let i=0;i<3;i++){
+            tab1.insertAdjacentHTML("beforeend",`
+                <tr>
+                    <td>${kys1[i]}</td>
+                    <td>${ils1[kys1[i]]}</td>
+                    <td><button id="btn${i}">Add item</button></td>
+                </tr>
+            `);
+            btn1=document.getElementById(`btn${i}`);
+            btn1.onclick=function handle1(){
+                ttl1+=ils1[kys1[i]];
+                txt1.textContent=ttl1.toString();
+            }
+        }
+    </script>
+</body>
+</html>
