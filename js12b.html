@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Series from 1 to 20</title>
+</head>
+<body>
+<script>
+
+let first = 0;
+let second = 1;
+let next;
+
+document.write("Fibonacci Series from 1 to 20:<br>");
+
+while (first <=20) {
+    document.write(first + " ");
+    next = first + second;
+    first = second;
+    second = next;
+}
+
+</script>
+</body>
+</html>
