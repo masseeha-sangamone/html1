@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="l1">Enter a number</label>
+    <input type="number" id="l1"></input>
+    <button id="btn1">Is this number prime?</button>
+    <label id="l2"></label>
+    <script>
+        let a=document.getElementById("l1");
+        let btn1=document.getElementById("btn1");
+        let l2=document.getElementById("l2");
+        function isPrime(num) {
+        if (num < 2) {
+            return false;
+        }
+        if (num === 2) {
+            return true;
+        }
+        if (num % 2 === 0) {
+            return false;
+        }
+        for (let i = 3; i <= Math.sqrt(num); i += 2) {
+            if(num % i === 0){
+            return false;
+            }
+            
+            }
+            return true;
+        }
+        btn1.onclick=function () {
+        let num=parseInt(a.value);
+            if (isPrime(num)) {
+                l2.innerText="It is a prime number."
+            }
+            else{
+                l2.innerText="It is not a prime number."
+            }
+        }
+        
+        </script>
+</body>
+</html>
