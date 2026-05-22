@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="num1">Enter a number</label>
+    <input type="text" id="num1"></input>
+    <button id="btn1">Find the sum of digits</button>
+    <span id="span1"></span>
+    <script>
+        let a=document.getElementById("num1");
+        let btn1=document.getElementById("btn1");
+        let s1=document.getElementById("span1");
+        btn1.onclick=function sumOfDigits(){
+        let num=parseInt(a.value);
+        let sum = 0;
+        while(num > 0){
+            sum += num % 10;
+            num = Math.floor(num / 10);
+            }
+            s1.textContent=sum.toString();
+            }
+    </script>
+</body>
+</html>
