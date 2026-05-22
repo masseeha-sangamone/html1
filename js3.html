@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Click to generate prime numbers from 1-100</h1>
+    <button id="button1">Generate</button>
+    <p id="p1" style="margin-left: 10px;"></p>
+    <script>
+        let btn1=document.getElementById("button1");
+        function isPrime(num) {
+        if (num < 2) {
+            return false;
+        }
+        if (num === 2) {
+            return true;
+        }
+        if (num % 2 === 0) {
+            return false;
+        }
+        for (let i = 3; i <= Math.sqrt(num); i += 2) {
+            if(num % i === 0){
+            return false;
+            }
+            
+            }
+            return true;
+        }
+        btn1.onclick=function(){
+        for (let i = 1; i <= 100; i++) {
+            if (isPrime(i)) {
+                p1.innerHTML+=i +"<br>";
+            }
+        }
+        }
+</script>
+</body>
+</html>
