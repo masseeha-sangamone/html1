@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="s">Enter the value for side</label>
+    <input type="text" id="s"></input><br>
+    <button id="btn">Find the Area of Square</button><br>
+    <span id="s1"></span>
+    <script>
+        function square(side){
+        return side*side;
+        }
+        btn.onclick=function(){
+            let side=parseInt((document.getElementById("s")).value);
+            let result=square(side);
+            s1.textContent="Area of the square is:"+result;
+            
+        }
+        </script>
+        </body>
+</html>
