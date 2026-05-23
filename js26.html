@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celsuis to Farhenheit</title>
+</head>
+<body>
+    <label for="c">Enter the value of celsius</label>
+    <input type="text" id="c"></input>
+    <br>
+    <button id="btn">Convert to Farhenheit</button><br>
+    <span id="s"></span>
+    <script>
+        function ctf(celsius){
+        return (celsius * 9/5) + 32;
+        }
+        btn.onclick=function(){
+            let celsius=parseInt((document.getElementById("c")).value);
+            let result=ctf(celsius);
+            s.textContent=result.toString();
+        }
+    </script>
+</body>
+</html>
