@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="r">Enter the value for radius</label>
+    <input type="text" id="r"></input>
+    <br>
+    <button id="btn">Find the area and circumference</button><br>
+    <span id="s"></span>
+    <script>
+        function circle(radius){
+        let area=3.14*radius*radius;
+        let circumference=2*3.14*radius;
+        return [area,circumference];
+        }
+        btn.onclick=function(){
+            let radius=parseInt((document.getElementById("r")).value);
+            let result=circle(radius);
+            s.textContent="Area="+result[0]+
+            ",Circumference="+result[1].toFixed(1);
+            
+        }
+    </script>
+</body>
+</html>
