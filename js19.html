@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Even numbers sum</title>
 </head>
 <body>
     <script>
+        let num=prompt("Enter the last number for even numbers sum")
         let sum=0;
-        for(let i=1;i<=100;i++){
+        for(let i=1;i<=num;i++){
             if(i%2==0){
                 sum+=i;
                 
             }
             
         }
-        document.write("Sum of even numbers from 1-100 is"+" "+sum);
+        document.write("Sum of even numbers from 1 to "+num+" is"+" "+sum);
     </script>
 </body>
 </html>
