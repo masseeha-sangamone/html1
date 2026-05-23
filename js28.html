@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="l">Enter the value for length</label>
+    <input type="text" id="l"></input>
+    
+    <label for="b">Enter the value for breadth</label>
+    <input type="text" id="b"></input>
+    <br>
+    <button id="btn">Find the Perimeter of the rectangle</button><br>
+    <span id="s"></span>
+    <script>
+        function rectangle(length,breadth){
+        return 2*(length+breadth);
+        }
+        btn.onclick=function(){
+            let length=parseInt((document.getElementById("l")).value);
+            let breadth=parseInt((document.getElementById("b")).value);
+            let result=rectangle(length,breadth);
+            s.textContent="Perimeter of rectangle is:"+result.toFixed(1);
+            
+        }
+    </script>
+</body>
+</html>
