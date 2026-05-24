@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<label>Enter the number</label>
+<input id="b">
+
+<label>Power value</label>
+<input id="p">
+
+<button id="btn">Calculate Power</button>
+
+<p id="s"></p>
+
+<script>
+btn.onclick=function(){
+
+    let b=parseFloat(document.getElementById("b").value);
+    let p=parseFloat(document.getElementById("p").value);
+
+    let result=1;
+
+    for(let i=1;i<=p;i++){
+        result*=b;
+    }
+
+    s.textContent=result;
+}
+</script>
+
+</body>
+</html>
