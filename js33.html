@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<label>Speed(km/hr)</label>
+<input id="s1">
+
+<label>Time(in hours)</label>
+<input id="t">
+
+<button id="btn">Find Distance</button>
+
+<p id="out"></p>
+
+<script>
+btn.onclick=function(){
+
+    let speed=parseFloat(document.getElementById("s1").value);
+    let time=parseFloat(document.getElementById("t").value);
+
+    let distance=speed*time;
+
+    out.textContent="Distance = "+distance;
+}
+</script>
+
+</body>
+</html>
