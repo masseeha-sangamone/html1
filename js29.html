@@ -3,29 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Triangle Area</title>
 </head>
+
 <body>
-    <label for="b">Enter the value for base</label>
-    <input type="text" id="b"></input><br>
-    
-    <label for="h">Enter the value for height</label>
-    <input type="text" id="h"></input>
+
+    <h3>Base & Height Method</h3>
+
+    <label for="b">Enter base</label>
+    <input type="text" id="b">
     <br>
-    <button id="btn">Find the Area of Triangle</button><br>
-    <span id="s"></span>
+
+    <label for="h">Enter height</label>
+    <input type="text" id="h">
+    <br><br>
+
+    <button id="btn1">Find Area</button>
+
+    <br><br>
+
+    <span id="s1"></span>
+
+    <h3>3 Sides Method (Heron's Formula)</h3>
+
+    <label for="a">Side 1</label>
+    <input type="text" id="a">
+    <br>
+
+    <label for="c">Side 2</label>
+    <input type="text" id="c">
+    <br>
+
+    <label for="d">Side 3</label>
+    <input type="text" id="d">
+    <br><br>
+
+    <button id="btn2">Find Area</button>
+
+    <br><br>
+
+    <span id="s2"></span>
+
     <script>
+
         function triangle(base,height){
-        return 0.5*(base*height);
+            return 0.5*base*height;
         }
-        btn.onclick=function(){
-            let breadth=parseInt((document.getElementById("b")).value);
-            let height=parseInt((document.getElementById("h")).value);
-            let result=triangle(base,height);
-            s.textContent="Area of the triangle is:"+result;
+
+        function triangle3(a,b,c) {
+            let semi =(a+ b+c)/2;
+
+            return Math.sqrt(
+                semi*(semi-a)*(semi-b)*(semi-c)
+            );
+        }
+
+        btn1.onclick = function () {
+
+            let base=parseFloat(document.getElementById("b").value);
+            let height=parseFloat(document.getElementById("h").value);
+
+            let result1=triangle(base,height);
             
+            s1.innerHTML="Area(base-height):"+result1;
         }
-        </script>
-        </body>
-    
+
+         btn2.onclick=function(){
+            let a=parseFloat(document.getElementById("a").value);
+            let b=parseFloat(document.getElementById("b").value);
+            let c=parseFloat(document.getElementById("c").value);
+
+            let result2=triangle3(a,b,c);
+
+             s2.innerHTML="Area(3 sides):"+result2.toFixed(2);
+         }
+    </script>
+
+</body>
 </html>
