@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<label>Enter first number(A)</label>
+<input id="a">
+
+<label>Enter second number(B)</label>
+<input id="b">
+
+<button id="btn">Swap</button>
+
+<p id="s"></p>
+
+<script>
+btn.onclick=function(){
+
+    let a=parseInt(document.getElementById("a").value);
+    let b=parseInt(document.getElementById("b").value);
+
+    a=a+b;
+    b=a-b;
+    a=a-b;
+
+    s.textContent="A="+a+" B="+b;
+}
+</script>
+
+</body>
+</html>
