@@ -20,7 +20,7 @@
         btn.onclick=function(){
             let radius=parseInt((document.getElementById("r")).value);
             let result=circle(radius);
-            s.textContent="Area="+result[0]+
+            s.textContent="Area="+result[0].toFixed(2)+
             ",Circumference="+result[1].toFixed(1);
             
         }
