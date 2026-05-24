@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<button id="btn">Print Perfect Numbers from 1-100</button>
+
+<p id="s"></p>
+
+<script>
+btn.onclick=function(){
+
+    let out="";
+
+    for(let n=1;n<=1000;n++){
+
+        let sum=0;
+
+        for(let i=1;i<n;i++){
+            if(n%i==0){
+                sum+=i;
+            }
+        }
+
+        if(sum==n){
+            out+=n+" ";
+        }
+    }
+
+    s.textContent=out;
+}
+</script>
+
+</body>
+</html>
