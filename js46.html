@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<button id="btn">Generate a random math quiz</button>
+
+<p id="q"></p>
+<input id="ans">
+<button id="check">Check</button>
+
+<p id="s"></p>
+
+<script>
+
+let correct=0;
+
+btn.onclick=function(){
+
+    let a=Math.floor(Math.random()*10);
+    let b=Math.floor(Math.random()*10);
+
+    let op=Math.random()<0.5?"+":"-";
+
+    if(op=="+"){
+        correct=a+b;
+    }else{
+        correct=a-b;
+    }
+
+    q.textContent=a+" "+op+" "+b;
+}
+
+check.onclick=function(){
+
+    let user=parseInt(ans.value);
+
+    if(user==correct){
+        s.textContent="Correct";
+    }else{
+        s.textContent="Wrong";
+    }
+}
+
+</script>
+
+</body>
+</html>
