@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+
+    <style>
+
+        body{
+            margin:0;
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            flex-direction:column;
+            font-family:Arial, Helvetica, sans-serif;
+            background-color:green;
+            transition:background-color 0.5s ease;
+        }
+
+        #timer{
+            font-size:120px;
+            color:white;
+            margin:0;
+            font-weight:bold;
+        }
+
+        #message{
+            font-size:40px;
+            color:white;
+            margin-top:20px;
+            font-weight:bold;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <h1 id="timer"></h1>
+    <p id="message"></p>
+
+    <script>
+
+        let count = 10;
+
+        let timerElement = document.getElementById("timer");
+        let messageElement = document.getElementById("message");
+
+        timerElement.innerHTML = count;
+
+        let timer = setInterval(function () {
+            count--;
+            timerElement.innerHTML =
+                count < 10 ? "0" + count : count;
+            if(count <= 5 && count > 2){
+                document.body.style.backgroundColor = "gold";
+            }
+
+            if(count <= 2 && count > 0){
+                document.body.style.backgroundColor = "orange";
+            }
+            if(count === 0){
+
+                document.body.style.backgroundColor = "#ff6b6b";
+                messageElement.innerHTML = "Time Up";
+                clearInterval(timer);
+            }
+
+        }, 1000);
+
+    </script>
+
+</body>
+</html>
