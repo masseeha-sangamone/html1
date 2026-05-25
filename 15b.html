@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Seat Selection</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            text-align: center;
+            background-color: #f2f2f2;
+        }
+
+        h1{
+            margin-top: 20px;
+        }
+
+        .legendTable{
+            margin: auto;
+            margin-bottom: 25px;
+            border-spacing: 20px 10px;
+        }
+
+        .legendTable td{
+            font-size: 18px;
+        }
+
+
+        .busTable{
+            margin: auto;
+            border: 6px solid gray;
+            border-radius: 18px;
+            padding: 20px;
+            background-color: white;
+        }
+
+        .busTable td{
+            padding: 12px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .gap{
+            width: 60px;
+        }
+
+        .seat{
+            width: 55px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .seat:hover{
+            transform: scale(1.08);
+            filter: drop-shadow(0px 0px 4px gray);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>Seat Selection</h1>
+
+    <table class="legendTable">
+
+        <tr>
+            <td>
+                <img src="seat1.svg" width="45">
+            </td>
+
+            <td>
+                <img src="seat2.svg" width="45">
+            </td>
+
+            <td>
+                <img src="seat3.svg" width="45">
+            </td>
+        </tr>
+
+        <tr>
+            <td>Available</td>
+            <td>Selected</td>
+            <td>Occupied</td>
+        </tr>
+
+    </table>
+
+    <table class="busTable">
+
+        <tr>
+
+    <td><img src="seat3.svg" class="seat"></td>
+    <td><img src="seat1.svg" class="seat"></td>
+    <td><img src="seat1.svg" class="seat"></td>
+
+    <td class="gap"></td>
+
+    <td><img src="seat1.svg" class="seat"></td>
+    <td><img src="seat1.svg" class="seat"></td>
+    <td><img src="seat3.svg" class="seat"></td>
+
+</tr>
+
+  <tr>
+
+    <td><img src="seat1.svg" class="seat"></td>
+    <td><img src="seat1.svg" class="seat"></td>
+    <td><img src="seat1.svg" class="seat"></td>
+
+    <td class="gap"></td>
+
+    <td><img src="seat1.svg" class="seat"></td>
+    <td><img src="seat1.svg" class="seat"></td>
+    <td><img src="seat1.svg" class="seat"></td>
+
+</tr>
+
+<tr>
+
+    <td><img src="seat1.svg" class="seat"></td>
+    <td><img src="seat1.svg" class="seat"></td>
+    <td><img src="seat1.svg" class="seat"></td>
+
+    <td class="gap"></td>
+
+    <td><img src="seat1.svg" class="seat"></td>
+    <td><img src="seat1.svg" class="seat"></td>
+    <td><img src="seat1.svg" class="seat"></td>
+
+</tr>
+
+   <tr>
+
+    <td><img src="seat1.svg" class="seat"></td>
+    <td><img src="seat1.svg" class="seat"></td>
+    <td><img src="seat1.svg" class="seat"></td>
+
+    <td class="gap"></td>
+
+    <td><img src="seat1.svg" class="seat"></td>
+    <td><img src="seat1.svg" class="seat"></td>
+    <td><img src="seat1.svg" class="seat"></td>
+
+</tr>
+
+        <tr>
+
+    <td><img src="seat1.svg" class="seat"></td>
+    <td><img src="seat1.svg" class="seat"></td>
+    <td><img src="seat1.svg" class="seat"></td>
+
+    <td class="gap"></td>
+
+    <td><img src="seat1.svg" class="seat"></td>
+    <td><img src="seat1.svg" class="seat"></td>
+    <td><img src="seat1.svg" class="seat"></td>
+
+</tr>
+        
+
+    </table>
+
+    <script>
+
+        let seats = document.getElementsByClassName("seat");
+
+        for(let seat of seats)
+        {
+
+            seat.onclick = function()
+            {
+
+                let currentSeat = seat.getAttribute("src");
+
+                if(currentSeat == "seat3.svg")
+                {
+                    return;
+                }
+
+                if(currentSeat == "seat1.svg")
+                {
+                    seat.setAttribute("src","seat2.svg");
+                }
+
+                else if(currentSeat == "seat2.svg")
+                {
+                    seat.setAttribute("src","seat1.svg");
+                }
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
