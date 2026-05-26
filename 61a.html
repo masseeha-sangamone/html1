@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light bulb State</title>
+    <style>
+
+        body{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        #bulb_id2{
+            font-weight: bold;
+            font-size: 50px;
+        }
+
+        #bulb1{
+            width: 200px;
+            cursor: pointer;
+        }
+
+        #bulb1:hover{
+            filter: drop-shadow(0px 0px 20px);
+        }
+
+    </style>
+</head>
+<body>
+
+    <img src="bulboff.gif" width="250" id="bulb1">
+    <p id="p1"></p>
+   
+
+    <script>
+
+        let bulb=document.getElementById("bulb1");
+
+        let count=0;
+
+        let interval=setInterval(function(){
+        if(bulb.src.includes("bulboff.gif")){
+            bulb.src="bulbon.gif";
+        }
+        else{
+            bulb.src="bulboff.gif";
+        }
+        count++;
+        p1.textContent=count;
+
+        if(count==20){
+            clearInterval(interval);
+        }
+        },400);
+    </script>
+
+
+</body>
+</html>
