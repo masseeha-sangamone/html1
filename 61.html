@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light bulb State</title>
+    <style>
+
+        body{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        #bulb_id2{
+            font-weight: bold;
+            font-size: 51px;
+        }
+        #bulb_id1{
+            width: 200px;
+            cursor: pointer;
+        }
+
+        #bulb_id1:hover{
+            filter: drop-shadow(0px 0px 20px);
+        }
+
+    </style>
+</head>
+<body>
+
+    <img src="bulboff.gif" width="250" id="bulb_id1">
+
+    <p id="bulb_id2">Bulb is off</p>
+
+    <script>
+
+        let bulbimg = document.getElementById("bulb_id1");
+        let bulbmsg = document.getElementById("bulb_id2");
+
+        let bulbState = false;
+        bulbimg.onclick = function(){
+            if(bulbState == false){
+                bulbState = true;
+                bulbmsg.textContent = "Bulb is on";
+                bulbimg.src = "bulbon.gif";
+            }
+            else{
+                bulbState = false;
+                bulbmsg.textContent = "Bulb is off";
+                bulbimg.src = "bulboff.gif";
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
