@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="text1"></p>
+    <script>
+        const url1="https://jsonplaceholder.typicode.com/posts";
+        const txt1=document.getElementById("text1");
+
+        async function loadData(){
+            const data1=await fetch(url1);
+            const data2=await data1.json();
+            console.log(data2);
+            txt1.textContent=data2[0].title;
+        } 
+        loadData();
+    </script>
+</body>
+</html>

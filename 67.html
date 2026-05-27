@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia</title>
+</head>
+<body>
+    <p id="text1"></p>
+    <button id="button1">New question</button>
+    <script>
+        const txt1=document.getElementById("text1");
+        const btn1=document.getElementById("button1");
+
+        btn1.onclick=async function handle1(){
+            const url1="https://opentdb.com/api.php?amount=1&category=9&difficulty=medium&type=multiple";
+            const data1=await fetch(url1);
+            const data2=await data1.json();
+
+            console.log(data2);
+            txt1.textContent=data2["results"][0]["question"];
+        }
+    </script>
+</body>
+</html>

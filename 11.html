@@ -3,118 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        :root{
-            --color1: #d18b47;
-            --color2: #ffcd9e;
-        }
-        table{
-            border-collapse:collapse;
-            border:2px solid black;
-            margin:auto;
-        }
-        td{
-            width:70px;
-            height:70px;
-            text-align:center;
-            font-size:50px;
-            font-weight:bold;
-            border:1px solid black;
-        }
-        .color1{
-            background-color:var(--color1);
-        }
-        .color2{
-            background-color:var(--color2);
-        }
-    </style>
+    <title>Assignment 1</title>
 </head>
 <body>
-    <table>
-        <tr>
-            <td class="color2">&#9814;	</td>
-            <td class="color1">&#9816;</td>
-            <td class="color2">&#9815;</td>
-            <td class="color1">&#9813;</td>
-            <td class="color2">&#9812;</td>
-            <td class="color1">&#9815;</td>
-            <td class="color2">&#9816;</td>
-            <td class="color1">&#9814;</td>
-        </tr>
-        <tr>
-            <td class="color1">&#9817;</td>
-            <td class="color2">&#9817;</td>
-            <td class="color1">&#9817;</td>
-            <td class="color2">&#9817;</td>
-            <td class="color1">&#9817;</td>
-            <td class="color2">&#9817;</td>
-            <td class="color1">&#9817;</td>
-            <td class="color2">&#9817;</td>
-        </tr>
-        <tr>
-            <td class="color2"></td>
-            <td class="color1"></td>
-            <td class="color2"></td>
-            <td class="color1"></td>
-            <td class="color2"></td>
-            <td class="color1"></td>
-            <td class="color2"></td>
-            <td class="color1"></td>
 
-        </tr>
-        <tr>
-            <td class="color1"></td>
-            <td class="color2"></td>
-            <td class="color1"></td>
-            <td class="color2"></td>
-            <td class="color1"></td>
-            <td class="color2"></td>
-            <td class="color1"></td>
-            <td class="color2"></td>
-        </tr>
-        <tr>
-            <td class="color2"></td>
-            <td class="color1"></td>
-            <td class="color2"></td>
-            <td class="color1"></td>
-            <td class="color2"></td>
-            <td class="color1"></td>
-            <td class="color2"></td>
-            <td class="color1"></td>
-        </tr>
-        <tr>
-            <td class="color1"></td>
-            <td class="color2"></td>
-            <td class="color1"></td>
-            <td class="color2"></td>
-            <td class="color1"></td>
-            <td class="color2"></td>
-            <td class="color1"></td>
-            <td class="color2"></td>
-        </tr>
-        
-        <tr>
-            <td class="color2">&#9823;</td>
-            <td class="color1">&#9823;</td>
-            <td class="color2">&#9823;</td>
-            <td class="color1">&#9823;</td>
-            <td class="color2">&#9823;</td>
-            <td class="color1">&#9823;</td>
-            <td class="color2">&#9823;</td>
-            <td class="color1">&#9823;</td>
-            </tr>
-            <tr>
-            <td class="color1">&#9820;</td>
-            <td class="color2">&#9822;</td>
-            <td class="color1">&#9821;</td>
-            <td class="color2">&#9819;</td>
-            <td class="color1">&#9818;	</td>
-            <td class="color2">&#9821;</td>
-            <td class="color1">&#9822;</td>
-            <td class="color2">&#9820;</td>
-        </tr>
-    </table>
-    
+    <label for="num1">Enter 1st number</label>
+    <input type="number" id="num1"><br><br>
+
+    <label for="num2">Enter 2nd number</label>
+    <input type="number" id="num2"><br><br>
+
+    <button id="btn1">Find HCF</button>
+    <button id="btn2">Find LCM</button><br><br>
+
+    <label>HCF IS:</label>
+    <span id="s1"></span><br><br>
+
+    <label>LCM IS:</label>
+    <span id="s2"></span>
+
+    <script>
+
+        let a = document.getElementById("num1");
+        let b = document.getElementById("num2");
+
+        let btn1 = document.getElementById("btn1");
+        let btn2 = document.getElementById("btn2");
+
+        let s1 = document.getElementById("s1");
+        let s2 = document.getElementById("s2");
+
+        function hcf(a, b) {
+            while (b !== 0) {
+                let temp = b;
+                b = a % b;
+                a = temp;
+            }
+            return a;
+        }
+
+        function lcm(a, b) {
+            return (a * b) / hcf(a, b);
+        }
+
+        btn1.onclick = function () {
+            let a = parseInt(num1.value);
+            let b = parseInt(num2.value);
+
+            let result = hcf(a, b);
+            s1.textContent = result;
+        };
+
+        btn2.onclick = function () {
+            let a = parseInt(num1.value);
+            let b = parseInt(num2.value);
+
+            let result = lcm(a, b);
+            s2.textContent = result;
+        };
+
+    </script>
+
 </body>
 </html>

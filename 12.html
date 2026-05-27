@@ -3,62 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Light bulb State</title>
-    <style>
-
-        body{
-            display:flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
-        }
-
-        #bulb_id2{
-            font-weight: bold;
-            font-size: 50px;
-        }
-
-        #bulb_id1{
-            width: 200px;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-
-        #bulb_id1:hover{
-            transform: scale(1.08);
-            filter: drop-shadow(0px 0px 20px);
-        }
-
-    </style>
+    <title>Document</title>
 </head>
 <body>
-
-    <img src="bulboff.gif" width="250" id="bulb_id1">
-
-    <p id="bulb_id2">Bulb is off</p>
-
+    <label for="label1">Enter a number:</label>
+    <input type="number" id="num1"></input><br>
+    <button id="btn1">Find the factorial</button>
+    <br>
+    <label id="label2"></label>
     <script>
-
-        let bulbimg = document.getElementById("bulb_id1");
-        let bulbmsg = document.getElementById("bulb_id2");
-
-        let bulbState = false;
-        bulbimg.onclick = function(){
-            if(bulbState == false){
-                bulbState = true;
-                bulbmsg.textContent = "Bulb is on";
-                bulbimg.src = "bulbon.gif";
+        let num=document.getElementById("num1");
+        let btn1=document.getElementById("btn1");
+        let l2=document.getElementById("label2");
+        function fact(a)
+        {
+            if(a>1){
+                return a*fact(a-1);
             }
             else{
-                bulbState = false;
-                bulbmsg.textContent = "Bulb is off";
-                bulbimg.src = "bulboff.gif";
+                return a;
             }
-
         }
+        btn1.onclick=function(){
+            let a=parseInt(num.value);
+            let result=fact(a);
+            l2.innerText="Factorial is"+" "+result;
+        }
+        
 
     </script>
-
 </body>
 </html>
