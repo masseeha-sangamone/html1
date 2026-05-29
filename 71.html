@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color palette</title>
+    <style>
+        .table1{
+            width: 60px;
+        }
+        th,td{
+            border:2px solid black;
+        }
+
+    </style>
+</head>
+<body>
+    <table id="redcolors">
+        <tr>
+            <th>No.</th>
+            <th>Colors</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td id="line1"></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td id="line2"></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td id="line3"></td>
+        </tr>
+    </table>
+    <script>
+        let redshades=[
+            "rgb(255,220,220)",
+            "rgb(255,205,205)",
+            "rgb(255,150,150)",
+            "rgb(255,120,120)",
+            "rgb(255,101,101)",
+            "rgb(255,65,65)",
+            "rgb(255,20,20)",
+            "rgb(200,0,0)"
+        ];
+
+        let greenshades=[
+            "rgb(220,255,220)",
+            "rgb(205,255,205)",
+            "rgb(150,255,150)",
+            "rgb(120,255,120)",
+            "rgb(101,255,101)",
+            "rgb(65,255,65)",
+            "rgb(20,255,20)",
+            "rgb(0,200,0)"
+        ];
+
+        let blueshades=[
+            "rgb(220,220,255)",
+            "rgb(205,205,255)",
+            "rgb(150,150,255)",
+            "rgb(120,120,255)",
+            "rgb(101,101,255)",
+            "rgb(65,65,255)",
+            "rgb(20,20,255)",
+            "rgb(0,0,200)"
+        ];
+
+        const ln1=document.getElementById("line1");
+        const ln2=document.getElementById("line2");
+        const ln3=document.getElementById("line3");
+
+        let part1="";
+        let part2="";
+        
+        for(let i=0;i<8;i++){
+            part1='<div style="width:100px; height:50px; display:inline-block; background-color: ';
+            part2=redshades[i]+'"></div>';
+            ln1.innerHTML+=part1+part2;
+        }
+
+        for(let i=0;i<8;i++){
+        part1='<div style="width:100px; height:50px; display:inline-block; background-color: ';
+        part2=greenshades[i]+'"></div>';
+        ln2.innerHTML+=part1+part2;
+        }
+
+        for(let i=0;i<8;i++){
+        part1='<div style="width:100px; height:50px; display:inline-block; background-color: ';
+        part2=blueshades[i]+'"></div>';
+        ln3.innerHTML+=part1+part2;
+        }
+
+    </script>
+</body>
+</html>
