@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #colorbox{
+            width:400px;
+            height:200px;
+        }
+    </style>
+</head>
+<body>
+     <h2>RGB Color Generator</h2>
+
+    <form>
+
+        <label for="red">Enter Value of Red</label>
+        <input type="number" id="red"></input>
+        <br>
+
+        <label for="blue">Enter Value of Blue</label>
+        <input type="number" id="blue"></input>
+        <br>
+
+        <label for="green">Enter Value of Green</label>
+        <input type="number" id="green"></input>
+        <br>
+        <br>
+
+        <button type="button" onclick="generate_color()">Submit</button>
+
+    </form>
+
+    <div id="colorbox"></div>
+
+    <script>
+
+        function generate_color()
+        {
+            let r=document.getElementById("red").value;
+            let g=document.getElementById("green").value;
+            let b=document.getElementById("blue").value;
+
+            let color = "rgb("+r+","+g+","+b+")";
+
+            document.getElementById("colorbox").style.backgroundColor=color;
+        }
+    
+    </script>
+</body>
+</html>
